@@ -1,8 +1,5 @@
-import { useState } from "react";
-
 function App() {
-  const x = 15;
-  return <div></div>;
+  return <div>Hello Wild Grainy Sanctum</div>;
 }
 
 export default App;
