@@ -22,6 +22,7 @@ export default defineConfig([
       "react/jsx-key": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
+      "no-constant-condition": "off",
     },
   },
 ]);

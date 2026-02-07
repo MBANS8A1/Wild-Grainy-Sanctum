@@ -13,9 +13,11 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Heading>The Wild Grainy Sanctum</Heading>
+        <Heading as="h1">The Wild Grainy Sanctum</Heading>
+        <Heading as="h2">Check in and out</Heading>
         <Button onClick={() => alert("Checked in")}>Check in</Button>
         <Button onClick={() => alert("Checked out")}>Check out</Button>
+        <Heading as="h3">Forms</Heading>
         <Input type="number" placeholder="Number of guests..." />
       </StyledApp>
     </>
