@@ -18,8 +18,20 @@ function App() {
             <Heading as="h1">The Wild Grainy Sanctum</Heading>
             <div>
               <Heading as="h2">Check in and out</Heading>
-              <Button onClick={() => alert("Checked in")}>Check in</Button>
-              <Button onClick={() => alert("Checked out")}>Check out</Button>
+              <Button
+                variation="primary"
+                size="medium"
+                onClick={() => alert("Checked in")}
+              >
+                Check in
+              </Button>
+              <Button
+                variation="secondary"
+                size="small"
+                onClick={() => alert("Checked out")}
+              >
+                Check out
+              </Button>
             </div>
           </Row>
           <Row type="vertical">
