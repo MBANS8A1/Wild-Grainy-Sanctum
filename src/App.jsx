@@ -13,18 +13,12 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Row type="vertical">
+        <Row>
           <Row type="horizontal">
             <Heading as="h1">The Wild Grainy Sanctum</Heading>
             <div>
               <Heading as="h2">Check in and out</Heading>
-              <Button
-                variation="primary"
-                size="medium"
-                onClick={() => alert("Checked in")}
-              >
-                Check in
-              </Button>
+              <Button onClick={() => alert("Checked in")}>Check in</Button>
               <Button
                 variation="secondary"
                 size="small"
@@ -34,7 +28,7 @@ function App() {
               </Button>
             </div>
           </Row>
-          <Row type="vertical">
+          <Row>
             <Heading as="h3">Forms</Heading>
             <form>
               <Input type="number" placeholder="Number of guests..." />
