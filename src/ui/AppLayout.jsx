@@ -9,13 +9,12 @@ const StyledAppLayout = styled.div`
   grid-template-rows: auto 1fr;
   height: 100vh;
 `;
+const Main = styled.main`
+  background-color: var(--color-grey-50);
+  padding: 4rem 4.8rem 6.4rem;
+`;
 
 function AppLayout() {
-  const Main = styled.main`
-    background-color: green;
-    padding: 4rem 4.8rem 6.4rem;
-  `;
-
   return (
     <StyledAppLayout>
       <Header />
