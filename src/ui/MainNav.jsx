@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavList = styled.ul`
@@ -46,7 +47,16 @@ const Link = styled.a`
 `;
 
 function MainNav() {
-  return <nav>Nav</nav>;
+  return (
+    <NavList>
+      <li>
+        <NavLink to="/dashboard">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/bookings">Bookings</NavLink>
+      </li>
+    </NavList>
+  );
 }
 
 export default MainNav;
