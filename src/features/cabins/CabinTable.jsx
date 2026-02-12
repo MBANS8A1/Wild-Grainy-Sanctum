@@ -39,7 +39,18 @@ function CabinTable() {
 
   if (isPending) return <Spinner />;
 
-  return <div>Table</div>;
+  return (
+    <Table role="table">
+      <TableHeader role="row">
+        <div></div>
+        <div>Cabin</div>
+        <div>Capacity</div>
+        <div>Price</div>
+        <div>Discount</div>
+        <div></div>
+      </TableHeader>
+    </Table>
+  );
 }
 
 export default CabinTable;
