@@ -48,7 +48,7 @@ function CabinRow({ cabin }) {
       <Cabin>{name}</Cabin>
       <div>Fits a maximum of {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>
-      <Price>{formatCurrency(discount)}</Price>
+      <Discount>{formatCurrency(discount)}</Discount>
       <button>Delete</button>
     </TableRow>
   );
