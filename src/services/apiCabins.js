@@ -21,6 +21,7 @@ export async function createCabin(newCabin) {
     console.error(error);
     throw new Error(`Cabin could not be created.`);
   }
+  return data;
 }
 
 export async function deleteCabin(id) {
