@@ -47,7 +47,7 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, getValues } = useForm();
   const queryClient = useQueryClient();
   const { isPending: isCreating, mutate } = useMutation({
     mutationFn: createCabin,
@@ -64,8 +64,12 @@ function CreateCabinForm() {
   function onFormSubmission(data) {
     mutate(data);
   }
+
+  function onError(errors) {
+    console.log(errors);
+  }
   return (
-    <Form onSubmit={handleSubmit(onFormSubmission)}>
+    <Form onSubmit={handleSubmit(onFormSubmission, onError)}>
       <FormRow>
         <Label htmlFor="name">Cabin name</Label>
         <Input
@@ -80,7 +84,13 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="maxCapacity"
-          {...register("maxCapacity", { required: "This field is required" })}
+          {...register("maxCapacity", {
+            required: "This field is required",
+            min: {
+              value: 1,
+              message: "Capacity should be at least 1",
+            },
+          })}
         />
       </FormRow>
 
@@ -89,7 +99,13 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="regularPrice"
-          {...register("regularPrice", { required: "This field is required" })}
+          {...register("regularPrice", {
+            required: "This field is required",
+            min: {
+              value: 1,
+              message: "Regular price should be at least 1",
+            },
+          })}
         />
       </FormRow>
 
@@ -99,7 +115,12 @@ function CreateCabinForm() {
           type="number"
           id="discount"
           defaultValue={0}
-          {...register("discount", { required: "This field is required" })}
+          {...register("discount", {
+            required: "This field is required",
+            validate: (value) =>
+              value <= getValues().regularPrice ||
+              "Discount should be less than or equal to the regular price",
+          })}
         />
       </FormRow>
 
