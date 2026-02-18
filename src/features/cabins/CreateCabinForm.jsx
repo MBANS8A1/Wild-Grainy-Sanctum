@@ -30,7 +30,7 @@ function CreateCabinForm() {
 
   function onFormSubmission(data) {
     console.log(data);
-    mutate({ ...data, image: data.image.at(0) });
+    mutate({ ...data, image: data.image[0] });
   }
 
   function onError(errors) {
