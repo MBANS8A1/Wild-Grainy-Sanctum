@@ -19,7 +19,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   console.log(errors);
   const queryClient = useQueryClient();
   const { isPending: isCreating, mutate: createCabin } = useMutation({
-    mutationFn: createEditCabin,
+    mutationFn: (newCabinData) => createEditCabin(newCabinData),
     onSuccess: () => {
       toast.success("New cabin successfully created.");
       queryClient.invalidateQueries({
