@@ -46,7 +46,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
   function onFormSubmission(data) {
     // console.log(data);
-    mutate({ ...data, image: data.image[0] });
+    createCabin({ ...data, image: data.image[0] });
   }
 
   function onError(errors) {
