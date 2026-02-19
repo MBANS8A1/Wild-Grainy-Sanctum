@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { createCabin } from "../../services/apiCabins";
+import { createEditCabin } from "../../services/apiCabins";
 import toast from "react-hot-toast";
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
@@ -19,7 +19,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   console.log(errors);
   const queryClient = useQueryClient();
   const { isPending: isCreating, mutate } = useMutation({
-    mutationFn: createCabin,
+    mutationFn: createEditCabin,
     onSuccess: () => {
       toast.success("New cabin successfully created.");
       queryClient.invalidateQueries({
