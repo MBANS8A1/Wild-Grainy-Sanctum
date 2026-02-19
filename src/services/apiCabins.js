@@ -18,11 +18,13 @@ export async function createEditCabin(newCabin, id) {
   );
 
   const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
-  const { data, error } = await supabase
-    .from("cabins")
-    .insert([{ ...newCabin, image: imagePath }])
-    .select()
-    .single();
+
+  let query = supabase.from("cabins");
+  //A: to create a cabin
+  if (!id) await query.insert([{ ...newCabin, image: imagePath }]);
+  //B to edit a cabin
+  if(id)
+  const { data, error } = await query.select().single();
 
   if (error) {
     console.error(error);
