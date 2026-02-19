@@ -45,11 +45,12 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const isWorking = isCreating || isEditing;
 
   function onFormSubmission(data) {
+    const image = typeof data.image === "string" ? data.image : data.image[0];
     if (isEditSession) {
       editCabin();
     } else {
       // console.log(data);
-      createCabin({ ...data, image: data.image[0] });
+      createCabin({ ...data, image: image });
     }
   }
 
