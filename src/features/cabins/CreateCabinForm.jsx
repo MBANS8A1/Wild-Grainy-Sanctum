@@ -45,8 +45,12 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const isWorking = isCreating || isEditing;
 
   function onFormSubmission(data) {
-    // console.log(data);
-    createCabin({ ...data, image: data.image[0] });
+    if (isEditSession) {
+      editCabin();
+    } else {
+      // console.log(data);
+      createCabin({ ...data, image: data.image[0] });
+    }
   }
 
   function onError(errors) {
