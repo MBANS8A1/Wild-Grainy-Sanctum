@@ -19,7 +19,6 @@ function UpdateSettingsForm() {
 
   function handleUpdate(e, settingName) {
     const { value } = e.target;
-    console.log(value);
     if (!value) return;
     updateSetting({ [settingName]: value });
   }
