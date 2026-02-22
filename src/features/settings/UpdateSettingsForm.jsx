@@ -3,10 +3,11 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
 import { useSettings } from "./useSettings";
+import { useUpdateSetting } from "./useUpdateSetting";
 
 function UpdateSettingsForm() {
   const { isPending, error, settings = {} } = useSettings();
-  const { isUpdating, updateSetting } = useUpdate();
+  const { isUpdating, updateSetting } = useUpdateSetting();
   const {
     minBookingLength,
     maxBookingLength,
