@@ -16,10 +16,21 @@ function UpdateSettingsForm() {
   } = settings;
 
   if (isPending) return <Spinner />;
+
+  function handleUpdate(e, settingName) {
+    const { value } = e.target;
+    if (!value) return;
+    updateSetting({ [settingName]: value });
+  }
   return (
     <Form>
       <FormRow label="Minimum nights/booking">
-        <Input type="number" id="min-nights" defaultValue={minBookingLength} />
+        <Input
+          type="number"
+          id="min-nights"
+          defaultValue={minBookingLength}
+          onBlur={(e) => handleUpdate(e, "minBookingLength")}
+        />
       </FormRow>
       <FormRow label="Maximum nights/booking">
         <Input type="number" id="max-nights" defaultValue={maxBookingLength} />
