@@ -6,7 +6,7 @@ export function useUpdateSetting() {
   const queryClient = useQueryClient();
 
   const { isPending: isUpdating, mutate: updateSetting } = useMutation({
-    mutationFn: ({ newSettingsData }) => updateSettingApi(newSettingsData),
+    mutationFn: (newSettingsData) => updateSettingApi(newSettingsData),
     onSuccess: () => {
       toast.success("Setting successfully updated.");
       queryClient.invalidateQueries({
