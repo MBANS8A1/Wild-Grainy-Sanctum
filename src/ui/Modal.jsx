@@ -50,7 +50,7 @@ const Button = styled.button`
   }
 `;
 
-function Modal({ children }) {
+function Modal({ children, onClose }) {
   return (
     <Overlay>
       <StyledModal>

@@ -12,7 +12,7 @@ function AddCabin() {
         {!isOpenModal ? "Add new cabin" : "Hide create cabin form"}
       </Button>
       {isOpenModal && (
-        <Modal>
+        <Modal onClose={() => setIsOpenModal(false)}>
           <CreateCabinForm />
         </Modal>
       )}
