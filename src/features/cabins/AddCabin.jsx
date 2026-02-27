@@ -4,20 +4,33 @@ import Modal from "../../ui/Modal";
 import CreateCabinForm from "./CreateCabinForm";
 
 function AddCabin() {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
   return (
-    <div>
-      <Button onClick={() => setIsOpenModal((show) => !show)}>
-        {!isOpenModal ? "Add new cabin" : "Hide create cabin form"}
-      </Button>
-      {isOpenModal && (
-        <Modal onClose={() => setIsOpenModal(false)}>
-          <CreateCabinForm onCloseModal={() => setIsOpenModal(false)} />
-        </Modal>
-      )}
-    </div>
+    <Modal>
+      <Modal.Open>
+        <Button>Add new cabin</Button>
+      </Modal.Open>
+      <Modal.Window>
+        <CreateCabinForm />
+      </Modal.Window>
+    </Modal>
   );
 }
+
+// function AddCabin() {
+//   const [isOpenModal, setIsOpenModal] = useState(false);
+
+//   return (
+//     <div>
+//       <Button onClick={() => setIsOpenModal((show) => !show)}>
+//         {!isOpenModal ? "Add new cabin" : "Hide create cabin form"}
+//       </Button>
+//       {isOpenModal && (
+//         <Modal onClose={() => setIsOpenModal(false)}>
+//           <CreateCabinForm onCloseModal={() => setIsOpenModal(false)} />
+//         </Modal>
+//       )}
+//     </div>
+//   );
+// }
 
 export default AddCabin;
