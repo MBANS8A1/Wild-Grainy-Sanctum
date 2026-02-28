@@ -1,3 +1,4 @@
+import { createContext } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -51,7 +52,10 @@ const Button = styled.button`
   }
 `;
 
-function Modal({ children, onClose }) {
+const ModalContext = createContext();
+
+function Modal({ children }) {}
+function Window({ children, onClose }) {
   return createPortal(
     <Overlay>
       <StyledModal>
