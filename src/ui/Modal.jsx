@@ -57,8 +57,12 @@ const ModalContext = createContext();
 
 function Modal({ children }) {
   const [openName, setOpenName] = useState("");
+  const close = () => setOpenName("");
+  const open = () => setOpenName;
 }
-function Window({ children, onClose }) {
+
+function Open({ children, opens }) {}
+function Window({ children, name, onClose }) {
   return createPortal(
     <Overlay>
       <StyledModal>
@@ -71,5 +75,8 @@ function Window({ children, onClose }) {
     document.body,
   );
 }
+
+Modal.Open = Open;
+Modal.Window = Window;
 
 export default Modal;
