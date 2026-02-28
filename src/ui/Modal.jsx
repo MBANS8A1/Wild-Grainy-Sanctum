@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createContext } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
@@ -54,7 +55,9 @@ const Button = styled.button`
 
 const ModalContext = createContext();
 
-function Modal({ children }) {}
+function Modal({ children }) {
+  const [openName, setOpenName] = useState("");
+}
 function Window({ children, onClose }) {
   return createPortal(
     <Overlay>
