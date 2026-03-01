@@ -86,12 +86,12 @@ function CabinRow({ cabin }) {
           <HiSquare2Stack />
         </button>
         <Modal>
-          <Modal.Open>
+          <Modal.Open opens="edit">
             <button>
               <HiPencil />
             </button>
           </Modal.Open>
-          <Modal.Window>
+          <Modal.Window name="edit">
             <CreateCabinForm cabinToEdit={cabin} />
           </Modal.Window>
           <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
