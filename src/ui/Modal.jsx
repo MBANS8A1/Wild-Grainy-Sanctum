@@ -1,4 +1,4 @@
-import { cloneElement, useContext } from "react";
+import { cloneElement, useContext, useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { createPortal } from "react-dom";
@@ -74,8 +74,12 @@ function Open({ children, opens: opensWindowName }) {
 }
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
+  useEffect(function () {
+    function handleClick(e) {}
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
   if (name !== openName) return null;
-
   return createPortal(
     <Overlay>
       <StyledModal>
