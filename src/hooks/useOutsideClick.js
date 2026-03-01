@@ -15,4 +15,6 @@ export function useOutsideClick(closeHandler, listenOnCapturing = true) {
     },
     [closeHandler, listenOnCapturing],
   );
+
+  return clickRef;
 }

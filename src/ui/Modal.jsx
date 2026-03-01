@@ -76,7 +76,7 @@ function Open({ children, opens: opensWindowName }) {
 }
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
-  useOutsideClick(close);
+  const clickRef = useOutsideClick(close);
   if (name !== openName) return null;
   return createPortal(
     <Overlay>
