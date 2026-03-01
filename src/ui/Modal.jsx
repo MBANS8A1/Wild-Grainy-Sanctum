@@ -75,17 +75,16 @@ function Open({ children, opens: opensWindowName }) {
 }
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
-  const clickRef = useRef(null);
+  const clickRef = useRef();
   useEffect(
     function () {
       function handleClick(e) {
         if (clickRef.current && !clickRef.current.contains(e.target)) {
-          console.log("Clicked outside");
           close();
         }
       }
-      document.addEventListener("click", handleClick);
-      return () => document.removeEventListener("click", handleClick);
+      document.addEventListener("click", handleClick, true);
+      return () => document.removeEventListener("click", handleClick, true);
     },
     [close],
   );
