@@ -59,6 +59,6 @@ const Empty = styled.p`
   margin: 2.4rem;
 `;
 
-function Table() {}
+function Table({ columns, children }) {}
 
 export default Table;
