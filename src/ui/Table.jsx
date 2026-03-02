@@ -61,4 +61,15 @@ const Empty = styled.p`
 
 function Table({ columns, children }) {}
 
+function Header({ children }) {}
+
+function Row({ children }) {}
+
+function Body() {}
+
+Table.Header = Header;
+Table.Row = Row;
+Table.Body = Body;
+Table.Footer = Footer;
+
 export default Table;
