@@ -87,7 +87,7 @@ function Row({ children }) {
   );
 }
 
-function Body() {}
+function Body({ render }) {}
 
 Table.Header = Header;
 Table.Row = Row;
