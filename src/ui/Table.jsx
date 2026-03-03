@@ -87,7 +87,10 @@ function Row({ children }) {
   );
 }
 
-function Body({ render }) {}
+function Body({ data, render }) {
+  if (!data.length) return <Empty>No data available to show right now.</Empty>;
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
 
 Table.Header = Header;
 Table.Row = Row;
