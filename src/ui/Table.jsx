@@ -78,7 +78,14 @@ function Header({ children }) {
   );
 }
 
-function Row({ children }) {}
+function Row({ children }) {
+  const { columns } = useContext(TableContext);
+  return (
+    <StyledRow role="row" columns={columns}>
+      {children}
+    </StyledRow>
+  );
+}
 
 function Body() {}
 
