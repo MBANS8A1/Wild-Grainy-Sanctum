@@ -62,7 +62,10 @@ const StyledButton = styled.button`
 `;
 
 function Menus({ children }) {
-  return <div></div>;
+  return <div>{children}</div>;
 }
 
+function Toggle({ id }) {}
+
+function List({ id }) {}
 export default Menus;
