@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import { HiEllipsisVertical } from "react-icons/hi2";
 import styled from "styled-components";
 
 const Menu = styled.div`
@@ -77,7 +78,17 @@ function Menus({ children }) {
 }
 
 function Toggle({ id }) {
-  return <StyledToggle onClick={() => handleClick}></StyledToggle>;
+  const { openId, close, open } = useContext(MenusContext);
+
+  function handleClick() {
+    if (!openId || openId !== id) open(id);
+  }
+
+  return (
+    <StyledToggle onClick={handleClick}>
+      <HiEllipsisVertical />;
+    </StyledToggle>
+  );
 }
 
 function List({ id }) {}
