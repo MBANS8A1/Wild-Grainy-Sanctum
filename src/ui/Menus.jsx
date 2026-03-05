@@ -80,7 +80,13 @@ function Toggle({ id }) {}
 
 function List({ id }) {}
 
-function Button({ children }) {}
+function Button({ children }) {
+  return (
+    <li>
+      <StyledButton>{children}</StyledButton>
+    </li>
+  );
+}
 
 Menus.Menu = Menu;
 Menus.Toggle = Toggle;
