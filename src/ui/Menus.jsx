@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { useState } from "react";
+import { createContext } from "react";
 import styled from "styled-components";
 
 const Menu = styled.div`
@@ -61,8 +64,12 @@ const StyledButton = styled.button`
   }
 `;
 
+const MenusContext = createContext();
 function Menus({ children }) {
-  return <div>{children}</div>;
+  const [openId, setOpenId] = useState();
+  return (
+    <MenusContext.Provider value={{ openId }}>{children}</MenusContext.Provider>
+  );
 }
 
 function Toggle({ id }) {}
