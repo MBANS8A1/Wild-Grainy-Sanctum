@@ -68,4 +68,11 @@ function Menus({ children }) {
 function Toggle({ id }) {}
 
 function List({ id }) {}
+
+function Button({ children }) {}
+
+Menus.Menu = Menu;
+Menus.Toggle = Toggle;
+Menu.List = List;
+Menu.Button = Button;
 export default Menus;
