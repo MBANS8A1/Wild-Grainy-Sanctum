@@ -66,9 +66,13 @@ const StyledButton = styled.button`
 
 const MenusContext = createContext();
 function Menus({ children }) {
-  const [openId, setOpenId] = useState();
+  const [openId, setOpenId] = useState("");
+  const close = () => setOpenId("");
+  const open = (menuId) => setOpenId(menuId);
   return (
-    <MenusContext.Provider value={{ openId }}>{children}</MenusContext.Provider>
+    <MenusContext.Provider value={{ openId, close, open }}>
+      {children}
+    </MenusContext.Provider>
   );
 }
 
