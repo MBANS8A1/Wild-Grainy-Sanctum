@@ -76,7 +76,9 @@ function Menus({ children }) {
   );
 }
 
-function Toggle({ id }) {}
+function Toggle({ id }) {
+  return <StyledToggle onClick={() => handleClick}></StyledToggle>;
+}
 
 function List({ id }) {}
 
