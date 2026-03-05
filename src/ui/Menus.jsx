@@ -81,7 +81,7 @@ function Toggle({ id }) {
   const { openId, close, open } = useContext(MenusContext);
 
   function handleClick() {
-    !openId || openId !== id ? open(id) : close();
+    openId === "" || openId !== id ? open(id) : close();
   }
 
   return (
