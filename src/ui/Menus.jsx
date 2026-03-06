@@ -113,6 +113,6 @@ function Button({ children }) {
 
 Menus.Menu = Menu;
 Menus.Toggle = Toggle;
-Menu.List = List;
-Menu.Button = Button;
+Menus.List = List;
+Menus.Button = Button;
 export default Menus;
