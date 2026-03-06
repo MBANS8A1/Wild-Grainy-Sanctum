@@ -87,7 +87,7 @@ function Toggle({ id }) {
 
   return (
     <StyledToggle onClick={handleClick}>
-      <HiEllipsisVertical />;
+      <HiEllipsisVertical />
     </StyledToggle>
   );
 }
