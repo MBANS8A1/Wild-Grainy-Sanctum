@@ -87,9 +87,9 @@ function Toggle({ id }) {
   function handleClick(e) {
     const domRect = e.target.closest("button").getBoundingClientRect();
     setPosition({
-      x: window.innerWidth - domRect.width
-      y:
-    })
+      x: window.innerWidth - domRect.width,
+      y: domRect.y + domRect.height + 8,
+    });
     openId === "" || openId !== id ? open(id) : close();
   }
 
@@ -101,7 +101,7 @@ function Toggle({ id }) {
 }
 
 function List({ id, children }) {
-  const { openId } = useContext(MenusContext);
+  const { openId, position } = useContext(MenusContext);
 
   if (openId !== id) return null;
 
