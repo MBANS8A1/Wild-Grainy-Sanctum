@@ -87,7 +87,7 @@ function Toggle({ id }) {
   function handleClick(e) {
     const domRect = e.target.closest("button").getBoundingClientRect();
     setPosition({
-      x: window.innerWidth - domRect.width,
+      x: window.innerWidth - domRect.width - domRect.x,
       y: domRect.y + domRect.height + 8,
     });
     openId === "" || openId !== id ? open(id) : close();
@@ -106,7 +106,7 @@ function List({ id, children }) {
   if (openId !== id) return null;
 
   return createPortal(
-    <StyledList position={{ x: 20, y: 20 }}>{children}</StyledList>,
+    <StyledList position={position}>{children}</StyledList>,
     document.body,
   );
 }
