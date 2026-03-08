@@ -92,16 +92,11 @@ function CabinRow({ cabin }) {
               <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate}>
                 Duplicate
               </Menus.Button>
-
-              <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
-
+              <Modal.Open opens="edit">
+                <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
+              </Modal.Open>
               <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
             </Menus.List>
-            <Modal.Open opens="edit">
-              <button>
-                <HiPencil />
-              </button>
-            </Modal.Open>
             <Modal.Window name="edit">
               <CreateCabinForm cabinToEdit={cabin} />
             </Modal.Window>
