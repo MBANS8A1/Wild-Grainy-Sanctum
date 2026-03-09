@@ -4,6 +4,7 @@ import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import { useSearchParams } from "react-router-dom";
 
 const TableHeader = styled.header`
   display: grid;
@@ -22,6 +23,7 @@ const TableHeader = styled.header`
 
 function CabinTable() {
   const { isPending, cabins, error } = useCabins();
+  const [searchParams] = useSearchParams();
 
   if (isPending) return <Spinner />;
 
