@@ -24,9 +24,9 @@ const TableHeader = styled.header`
 function CabinTable() {
   const { isPending, cabins, error } = useCabins();
   const [searchParams] = useSearchParams();
-
   if (isPending) return <Spinner />;
-
+  const filterValue = searchParams.get("discount") || "all";
+  console.log(filterValue);
   return (
     <Menus>
       <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
