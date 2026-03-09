@@ -35,11 +35,16 @@ const FilterButton = styled.button`
 `;
 
 function Filter() {
+  function handleClick(value) {}
   return (
     <StyledFilter>
-      <FilterButton>All</FilterButton>
-      <FilterButton>No discount</FilterButton>
-      <FilterButton>With discount</FilterButton>
+      <FilterButton onClick={() => handleClick("all")}>All</FilterButton>
+      <FilterButton onClick={() => handleClick("no-discount")}>
+        No discount
+      </FilterButton>
+      <FilterButton onClick={() => handleClick("with-discount")}>
+        With discount
+      </FilterButton>
     </StyledFilter>
   );
 }
