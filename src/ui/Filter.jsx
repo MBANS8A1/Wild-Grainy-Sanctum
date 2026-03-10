@@ -47,7 +47,7 @@ function Filter({ filterField, options }) {
         return (
           <FilterButton
             onClick={() => handleClick(option.value)}
-            key={option.label}
+            key={option.value}
           >
             {option.label}
           </FilterButton>
