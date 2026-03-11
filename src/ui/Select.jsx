@@ -18,9 +18,11 @@ function Select({ options, value }) {
   return (
     <StyledSelect value={value}>
       {options.map((option) => {
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>;
+        return (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        );
       })}
     </StyledSelect>
   );
