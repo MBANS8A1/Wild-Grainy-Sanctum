@@ -7,6 +7,10 @@ export function useBookings() {
 
   //Begin filtering
   const filterValue = searchParams.get("status");
+  const filter =
+    !filterValue || filterValue === "all"
+      ? null
+      : { field: "status", value: filterValue };
 
   const {
     isPending,
