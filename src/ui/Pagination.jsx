@@ -58,19 +58,21 @@ const PaginationButton = styled.button`
 `;
 
 function Pagination({ resultCount }) {
+  function nextPage() {}
+  function previousPage() {}
   return (
     <StyledPagination>
       <P>
-        Showing <span>1</span> to <span>10</span> of <span>{resultCount}</span>
+        Showing <span>1</span> to <span>10</span> of <span>{resultCount}</span>{" "}
         results
       </P>
 
       <Buttons>
-        <PaginationButton>
+        <PaginationButton onClick={previousPage}>
           <HiChevronLeft />
           <span>Previous</span>
         </PaginationButton>
-        <PaginationButton>
+        <PaginationButton onClick={nextPage}>
           <span>Next</span>
           <HiChevronRight />
         </PaginationButton>
