@@ -86,11 +86,14 @@ function Pagination({ resultCount }) {
       </P>
 
       <Buttons>
-        <PaginationButton onClick={previousPage}>
+        <PaginationButton onClick={previousPage} disabled={currentPage === 1}>
           <HiChevronLeft />
           <span>Previous</span>
         </PaginationButton>
-        <PaginationButton onClick={nextPage}>
+        <PaginationButton
+          onClick={nextPage}
+          disabled={currentPage === pageCount}
+        >
           <span>Next</span>
           <HiChevronRight />
         </PaginationButton>
