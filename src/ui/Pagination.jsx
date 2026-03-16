@@ -64,7 +64,6 @@ function Pagination({ resultCount }) {
   const currentPage = !searchParams.get("page")
     ? 1
     : Number(searchParams.get("page"));
-
   const pageCount = Math.ceil(resultCount / PAGE_SIZE);
   function nextPage() {
     //Check if the user is already on the last page
@@ -78,6 +77,7 @@ function Pagination({ resultCount }) {
     searchParams.set("page", prev);
     setSearchParams(searchParams);
   }
+  if (pageCount <= 1) return null;
   return (
     <StyledPagination>
       <P>
