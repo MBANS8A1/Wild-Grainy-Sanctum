@@ -18,12 +18,12 @@ export function useBookings() {
   const sortBy = { field, direction };
   const {
     isPending,
-    data: { data: bookings, count: resultCount },
+    data: bookingsDataObj,
     error,
   } = useQuery({
     queryKey: ["bookings", filter, sortBy],
     queryFn: () => getBookings({ filter, sortBy }),
   });
 
-  return { isPending, bookings, error, resultCount };
+  return { isPending, error, bookingsDataObj };
 }
