@@ -8,6 +8,7 @@ import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
   const { isPending, bookingsDataObj, error } = useBookings();
+  //The data from getBookings() is loaded in asynchronously so the bookingsDataObj is not availabale initially.
   if (bookingsDataObj === undefined) return <Spinner />;
   const { data: bookings, count: resultCount } = bookingsDataObj;
   if (isPending) return <Spinner />;
