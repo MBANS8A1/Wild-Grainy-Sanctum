@@ -21,12 +21,12 @@ export function useBookings() {
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
   const {
     isPending,
-    data: bookingsDataObj,
+    data: { data: bookings, count } = {},
     error,
   } = useQuery({
     queryKey: ["bookings", filter, sortBy, page],
     queryFn: () => getBookings({ filter, sortBy, page }),
   });
 
-  return { isPending, error, bookingsDataObj };
+  return { isPending, error, bookings, count };
 }
