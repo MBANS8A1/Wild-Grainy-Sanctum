@@ -33,8 +33,8 @@ export function useBookings() {
   //Pre-fetching
 
   queryClient.prefetchQuery({
-    queryKey: ["bookings", filter, sortBy, page],
-    queryFn: () => getBookings({ filter, sortBy, page }),
+    queryKey: ["bookings", filter, sortBy, page + 1],
+    queryFn: () => getBookings({ filter, sortBy, page: page + 1 }),
   });
 
   return { isPending, error, bookings, count };
