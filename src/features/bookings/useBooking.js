@@ -13,5 +13,5 @@ export function useBooking() {
     queryFn: () => getBooking(bookingId),
   });
 
-  return { isPending, cabins, error };
+  return { isPending, booking, error };
 }
