@@ -11,6 +11,7 @@ export function useBooking() {
   } = useQuery({
     queryKey: ["booking"],
     queryFn: () => getBooking(bookingId),
+    retry: false,
   });
 
   return { isPending, booking, error };
