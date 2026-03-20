@@ -26,15 +26,6 @@ function CheckinBooking() {
   const moveBack = useMoveBack();
   const { booking, isPending } = useBooking();
 
-  const {
-    id: bookingId,
-    guests,
-    totalPrice,
-    numGuests,
-    hasBreakfast,
-    numNights,
-  } = booking;
-
   useEffect(
     function () {
       function setConfirm() {
@@ -45,7 +36,17 @@ function CheckinBooking() {
     [booking],
   );
 
-  if (isPending) return <Spinner />;
+  if (typeof booking === "undefined" || isPending) return <Spinner />;
+  const {
+    id: bookingId,
+    guests,
+    totalPrice,
+    numGuests,
+    hasBreakfast,
+    numNights,
+  } = booking;
+
+  // if (isPending) return <Spinner />;
 
   function handleCheckin() {}
 
