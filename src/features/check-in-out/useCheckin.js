@@ -19,4 +19,6 @@ export function useCheckin() {
     },
     onError: () => toast.error("There was an error while trying to check in."),
   });
+
+  return { checkin, isCheckingIn };
 }
