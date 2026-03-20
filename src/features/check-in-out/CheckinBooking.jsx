@@ -11,6 +11,7 @@ import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
 import Spinner from "../../ui/Spinner";
 import { useState } from "react";
+import Checkbox from "../../ui/Checkbox";
 
 const Box = styled.div`
   /* Box */
@@ -46,6 +47,12 @@ function CheckinBooking() {
       </Row>
 
       <BookingDataBox booking={booking} />
+
+      <Box>
+        <Checkbox>
+          I confirm that guest {guests.fullName} has paid the total amount
+        </Checkbox>
+      </Box>
 
       <ButtonGroup>
         <Button onClick={handleCheckin}>Check in booking #{bookingId}</Button>
