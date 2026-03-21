@@ -94,7 +94,9 @@ function CheckinBooking() {
           disabled={confirmPaid || isCheckingIn}
         >
           I confirm that guest {guests.fullName} has paid the total amount of{" "}
-          {formatCurrency(booking.totalPrice)}
+          {!addBreakfast
+            ? formatCurrency(totalPrice)
+            : `${formatCurrency(totalPrice + discretionaryBreakfastPrice)} (${formatCurrency(totalPrice)} + ${formatCurrency(discretionaryBreakfastPrice)})`}
         </Checkbox>
       </Box>
 
