@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "../../ui/Checkbox";
 import { formatCurrency } from "../../utils/helpers";
 import { useCheckin } from "./useCheckin";
+import { useSettings } from "../settings/useSettings";
 
 const Box = styled.div`
   /* Box */
@@ -29,6 +30,7 @@ function CheckinBooking() {
   const moveBack = useMoveBack();
   const { checkin, isCheckingIn } = useCheckin();
   const { booking, isPending } = useBooking();
+  const { isPending: isSettingsPending, error, settings } = useSettings();
 
   useEffect(
     function () {
@@ -41,6 +43,7 @@ function CheckinBooking() {
   );
 
   if (typeof booking === "undefined" || isPending) return <Spinner />;
+
   const {
     id: bookingId,
     guests,
@@ -51,6 +54,8 @@ function CheckinBooking() {
   } = booking;
 
   // if (isPending) return <Spinner />;
+  const discretionaryBreakfastPrice =
+    settings.breakfastPrice * numNights * numGuests;
 
   function handleCheckin() {
     if (!confirmPaid) return;
@@ -74,7 +79,8 @@ function CheckinBooking() {
           }}
           id="breakfast"
         >
-          Would you like to add breakfast for X?
+          Would you like to add breakfast for{" "}
+          {formatCurrency(discretionaryBreakfastPrice)}?
         </Checkbox>
       </Box>
 
