@@ -42,7 +42,8 @@ function CheckinBooking() {
     [booking],
   );
 
-  if (typeof booking === "undefined" || isPending) return <Spinner />;
+  if (typeof booking === "undefined" || isPending || isSettingsPending)
+    return <Spinner />;
 
   const {
     id: bookingId,
