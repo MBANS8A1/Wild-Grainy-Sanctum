@@ -60,7 +60,12 @@ function CheckinBooking() {
 
   function handleCheckin() {
     if (!confirmPaid) return;
-    checkin(bookingId);
+
+    if (addBreakfast) {
+      checkin(bookingId);
+    } else {
+      checkin(bookingId);
+    }
   }
 
   return (
