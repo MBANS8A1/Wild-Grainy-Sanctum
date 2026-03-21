@@ -72,7 +72,10 @@ function CheckinBooking() {
             setAddBreakfast((add) => !add);
             setConfirmPaid(false);
           }}
-        ></Checkbox>
+          id="breakfast"
+        >
+          Would you like to add breakfast for X?
+        </Checkbox>
       </Box>
 
       <Box>
