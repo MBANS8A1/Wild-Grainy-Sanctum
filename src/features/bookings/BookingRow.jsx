@@ -16,6 +16,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useCheckout } from "../check-in-out/useCheckout";
 import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -126,6 +127,13 @@ function BookingRow({
             </Modal.Open>
           </Menus.List>
         </Menus.Menu>
+        <Modal.Window name="delete">
+          <ConfirmDelete
+            resourceName={`booking for ${guestName}`}
+            onConfirm={() => {}}
+            disabled={() => {}}
+          />
+        </Modal.Window>
       </Modal>
     </Table.Row>
   );
