@@ -1,5 +1,5 @@
 import { useUser } from "../features/authentication/useUser";
-import Spinner from "../../ui/Spinner";
+import Spinner from "./Spinner";
 import styled from "styled-components";
 
 const FullPage = styled.div`
